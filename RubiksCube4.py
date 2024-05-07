@@ -191,18 +191,14 @@ class RubiksCube3D:
                     elif event.key == pygame.K_DOWN:
                         self.rotate_cube('down')
                     elif event.key == pygame.K_w:
-                        # Rotate layer clockwise (for example, white layer)
-                        pass  # Placeholder, add your code here
+                        self.spin_cube('down')
                     elif event.key == pygame.K_a:
-                        # Rotate layer counter-clockwise (for example, white layer)
-                        pass  # Placeholder, add your code here
+                        self.spin_cube('down')
                     elif event.key == pygame.K_s:
-                        # Rotate layer clockwise (for example, yellow layer)
-                        pass  # Placeholder, add your code here
+                        self.spin_cube('down')
                     elif event.key == pygame.K_d:
-                        # Rotate layer counter-clockwise (for example, yellow layer)
-                        pass  # Placeholder, add your code here
-
+                        self.spin_cube('down') 
+                        
             self.draw_cube()
             pygame.display.flip()
             pygame.time.wait(10)
