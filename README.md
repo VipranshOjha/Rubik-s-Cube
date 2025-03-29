@@ -1,60 +1,89 @@
-# Rubik's Cube 3D Simulation
+# Rubik's Cube 3D Simulator
 
-This repository contains a 3D simulation of a Rubik's Cube using Pygame and OpenGL. The program allows you to rotate and interact with a virtual Rubik's Cube in a graphical environment.
-
-## How to Use
-
-To run the Rubik's Cube simulation, follow these steps:
-
-1. **Installation**
-   - Clone this repository:
-     ```bash
-     git clone https://github.com/VipranshOjha/rubiks-cube-3d.git
-     ```
-   - Install Python and required libraries (`pygame` and `PyOpenGL`).
-     ```bash
-     pip install pygame PyOpenGL
-     ```
-
-2. **Run the Simulation**
-   - Navigate to the project directory.
-   - Execute the Python script:
-     ```bash
-     python rubiks_cube_3d.py
-     ```
-
-3. **Controls**
-   - Use the arrow keys (`←`, `→`, `↑`, `↓`) to rotate the entire Rubik's Cube in different directions.
-   - Additional controls (placeholders for layer rotation):
-     - `W`: Rotate a specific layer clockwise (e.g., white layer).
-     - `A`: Rotate a specific layer counter-clockwise (e.g., white layer).
-     - `S`: Rotate a different layer clockwise (e.g., yellow layer).
-     - `D`: Rotate a different layer counter-clockwise (e.g., yellow layer).
+This project is a **3D Rubik's Cube simulator** built using **Python**, **Pygame**, and **OpenGL**. It allows users to interact with, scramble, and solve a virtual Rubik's Cube through animations and algorithmic solutions.
 
 ## Features
+- **3D Rendering**: Uses OpenGL to provide a realistic visualization of the Rubik's Cube.
+- **Mouse Interaction**: Rotate the cube and its faces using mouse gestures.
+- **Scrambling System**: A built-in scrambler applies random moves to shuffle the cube.
+- **Automated Solver**: Implements a step-by-step solving algorithm.
+- **Smooth Animations**: Transitions between cube states are animated for a better user experience.
+- **Move Notation**: Displays the solution sequence using standard Rubik's Cube move notation.
 
-- **Interactive 3D Visualization**
-  - Utilizes Pygame and OpenGL for rendering a 3D Rubik's Cube.
-  - Implements basic rotation functionalities for the entire cube and specific layers (placeholders for advanced functionality).
+---
 
-- **Color-Coded Cube**
-  - Each face of the cube is colored using defined RGB values, representing the standard Rubik's Cube color scheme.
+## Installation
+### Prerequisites
+Ensure you have **Python 3.x** installed, then install the necessary dependencies:
+```bash
+pip install pygame PyOpenGL numpy
+```
 
-## Repository Structure
+---
 
-- `rubiks_cube_3d.py`: Main Python script containing the Rubik's Cube simulation logic.
-- `README.md`: This document explaining the simulation and its usage.
+## Usage
+### Running the Simulator
+To launch the Rubik's Cube simulator, run:
+```bash
+python RubiksCube.py
+```
 
-## Dependencies
+### Controls
+- **Left Click & Drag**: Rotate the entire cube.
+- **Right Click & Drag**: Rotate an individual face.
+- **Escape Key**: Exit the program.
 
-- Python 3.x
-- `pygame` library for game development.
-- `PyOpenGL` library for OpenGL integration with Python.
+### Scrambling the Cube
+To scramble the cube, the `Scrambler` module generates and applies random moves:
+```python
+scrambler = CubeScrambler(cube_instance)
+scramble_sequence = scrambler.scramble(num_moves=20)
+```
 
-## Acknowledgments
+### Solving the Cube
+The `Solver` module attempts to solve the cube using predefined algorithms:
+```python
+solver = CubeSolver(cube_instance)
+solver.solve()
+solution_moves = solver.get_move_notation()
+print("Solution:", solution_moves)
+```
 
-This Rubik's Cube 3D simulation was developed by Vipransh Ojha as a learning project to explore 3D graphics programming with Pygame and OpenGL.
+---
 
-Feel free to explore and modify the code to enhance the Rubik's Cube simulation further!
+## Code Structure
+- **`RubiksCube.py`** – Main file for rendering and interacting with the cube.
+- **`scrambler.py`** – Handles random scrambling of the cube.
+- **`solver.py`** – Implements solving logic based on layer-by-layer methods.
 
-Enjoy simulating the Rubik's Cube in 3D! If you have any feedback or suggestions, please reach out.
+---
+
+## How It Works
+1. The cube is represented as a collection of smaller cubies with distinct face colors.
+2. **Scrambling** applies a sequence of random moves to mix up the cube.
+3. **Solving** follows logical steps:
+   - Solve the **white cross**.
+   - Position the **white corners**.
+   - Solve the **middle layer**.
+   - Form the **yellow cross**.
+   - Orient and permute the **yellow corners**.
+   - Finalize the **yellow edges**.
+4. The solution moves are displayed using standard Rubik's Cube notation (R, U, F, etc.).
+
+---
+
+## Future Improvements
+- Implement advanced solving techniques (e.g., CFOP method).
+- Add keyboard shortcuts for manual cube rotation.
+- Improve performance and animation speed.
+- Implement a GUI for easier interaction.
+
+---
+
+## License
+This project is open-source and available under the **MIT License**.
+
+---
+
+🚀 **Happy Cubing!**
+
