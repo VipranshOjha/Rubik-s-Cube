@@ -1,89 +1,80 @@
-# Rubik's Cube 3D Simulator
+# Rubik's Cube Simulator 🧩
 
-This project is a **3D Rubik's Cube simulator** built using **Python**, **Pygame**, and **OpenGL**. It allows users to interact with, scramble, and solve a virtual Rubik's Cube through animations and algorithmic solutions.
+A stunning 3D Rubik's Cube simulator with intuitive controls, built using Python, OpenGL, and Pygame.
 
-## Features
-- **3D Rendering**: Uses OpenGL to provide a realistic visualization of the Rubik's Cube.
-- **Mouse Interaction**: Rotate the cube and its faces using mouse gestures.
-- **Scrambling System**: A built-in scrambler applies random moves to shuffle the cube.
-- **Automated Solver**: Implements a step-by-step solving algorithm.
-- **Smooth Animations**: Transitions between cube states are animated for a better user experience.
-- **Move Notation**: Displays the solution sequence using standard Rubik's Cube move notation.
+## 🌟 Features
 
----
+- **Realistic 3D Cube**: Smooth, colorful 3D rendering of a Rubik's Cube
+- **Intuitive Controls**: Drag faces to rotate layers naturally
+- **Multiple Implementations**:
+  - Advanced 3D implementation with OpenGL
+  - Terminal-based version for minimalist environments
+  - URSINA engine implementation with advanced graphics
+- **Scrambler**: Randomize your cube with a single button press
+- **Auto-Solver**: Watch the cube solve itself using advanced algorithms
+- **Educational Tool**: Great for learning cube solving techniques
 
-## Installation
+## 🎮 Controls
+
+- **Mouse Drag**: Click and drag on a face to rotate that layer
+- **Arrow Keys**: Rotate the entire cube to view from different angles
+- **Space**: Scramble the cube with random moves
+- **Enter**: Automatically solve the cube
+- **R**: Reset to a solved state
+- **H**: Toggle help text
+- **ESC**: Exit the application
+
+## 💻 Technical Implementation
+
+The project is built with multiple rendering approaches:
+
+1. **OpenGL Implementation**: Direct 3D rendering with precise rotation physics
+2. **URSINA Engine**: Modern game engine with enhanced visual effects
+3. **Terminal-Based**: ASCII representation for command-line enthusiasts
+
+## 🚀 Getting Started
+
 ### Prerequisites
-Ensure you have **Python 3.x** installed, then install the necessary dependencies:
+- Python 3.8+
+- pygame
+- PyOpenGL
+- numpy
+- ursina (for URSINA version)
+
+### Installation
+
 ```bash
-pip install pygame PyOpenGL numpy
+# Clone the repository
+git clone https://github.com/VipranshOjha/Rubik-s-Cube.git
+cd rubikscube
+
+# Install dependencies
+pip install pygame PyOpenGL numpy ursina
+
+# Run the simulator
+python main.py
 ```
 
----
+## 📚 Learning Resources
 
-## Usage
-### Running the Simulator
-To launch the Rubik's Cube simulator, run:
-```bash
-python RubiksCube.py
-```
+This simulator is not just a game but also an educational tool:
 
-### Controls
-- **Left Click & Drag**: Rotate the entire cube.
-- **Right Click & Drag**: Rotate an individual face.
-- **Escape Key**: Exit the program.
+- Practice solving algorithms
+- Visualize cube rotations
+- Understand 3D matrix transformations
+- Study the layer-by-layer solving method
 
-### Scrambling the Cube
-To scramble the cube, the `Scrambler` module generates and applies random moves:
-```python
-scrambler = CubeScrambler(cube_instance)
-scramble_sequence = scrambler.scramble(num_moves=20)
-```
+## 🛠️ Implementation Details
 
-### Solving the Cube
-The `Solver` module attempts to solve the cube using predefined algorithms:
-```python
-solver = CubeSolver(cube_instance)
-solver.solve()
-solution_moves = solver.get_move_notation()
-print("Solution:", solution_moves)
-```
+- **Face Detection**: Precise ray casting for accurate face selection
+- **Rotation Animation**: Smooth transitions between cube states
+- **State Management**: Tracks the position and orientation of each cubelet
+- **Solving Algorithm**: Implements the beginner's method (layer by layer)
+
+## 📝 License
+
+This project is open source and available under the MIT License.
 
 ---
 
-## Code Structure
-- **`RubiksCube.py`** – Main file for rendering and interacting with the cube.
-- **`scrambler.py`** – Handles random scrambling of the cube.
-- **`solver.py`** – Implements solving logic based on layer-by-layer methods.
-
----
-
-## How It Works
-1. The cube is represented as a collection of smaller cubies with distinct face colors.
-2. **Scrambling** applies a sequence of random moves to mix up the cube.
-3. **Solving** follows logical steps:
-   - Solve the **white cross**.
-   - Position the **white corners**.
-   - Solve the **middle layer**.
-   - Form the **yellow cross**.
-   - Orient and permute the **yellow corners**.
-   - Finalize the **yellow edges**.
-4. The solution moves are displayed using standard Rubik's Cube notation (R, U, F, etc.).
-
----
-
-## Future Improvements
-- Implement advanced solving techniques (e.g., CFOP method).
-- Add keyboard shortcuts for manual cube rotation.
-- Improve performance and animation speed.
-- Implement a GUI for easier interaction.
-
----
-
-## License
-This project is open-source and available under the **MIT License**.
-
----
-
-🚀 **Happy Cubing!**
-
+Enjoy solving! Remember, the Rubik's Cube has over 43 quintillion possible combinations, but only one solution. Happy cubing! 🧩
