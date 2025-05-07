@@ -71,10 +71,6 @@ This simulator is not just a game but also an educational tool:
 - **State Management**: Tracks the position and orientation of each cubelet
 - **Solving Algorithm**: Implements the beginner's method (layer by layer)
 
-## 📝 License
-
-This project is open source and available under the MIT License.
-
 ---
 
 Enjoy solving! Remember, the Rubik's Cube has over 43 quintillion possible combinations, but only one solution. Happy cubing! 🧩
