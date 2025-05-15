@@ -7,7 +7,7 @@ import time
 
 # Import your RubiksCube3D class
 from RubiksCube4 import RubiksCube3D
-from Solver import CubeSolver  # Import the Solver
+from Solver import CubeSolver 
 
 class CubeScrambler:
     def __init__(self, cube_instance):
@@ -55,7 +55,7 @@ class RubiksCubeGame:
     def __init__(self):
         self.cube = RubiksCube3D()
         self.scrambler = CubeScrambler(self.cube)
-        self.solver = CubeSolver(self.cube)  # Initialize Solver
+        self.solver = CubeSolver(self.cube) 
         self.running = True
         self.show_help = False
 
@@ -66,7 +66,7 @@ class RubiksCubeGame:
                 # Scramble cube
                 self.scrambler.scramble()
             elif event.key == pygame.K_RETURN:
-                # Solve the cube (Call Solver.py)
+                # Solve the cube
                 print("Solving cube...")
                 self.solver.solve()
                 print("Solution applied!")
